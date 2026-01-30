@@ -16,6 +16,8 @@ spec:
         kubernetes.io/os: windows
       containers:
       - name: hello-world
-        image: k8syns/hello-world-windows:latest
+        image: k8syns/hello-world-windows:{{tag}}
+        imagePullPolicy: Always
         ports:
         - containerPort: 8080
+
