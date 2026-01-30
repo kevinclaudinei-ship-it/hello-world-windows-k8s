@@ -50,6 +50,8 @@ pipeline {
         withKubeConfig([credentialsId: 'kubeconfig']) {
           sh '''
             sed "s/{{tag}}/${TAG_VERSION}/g" k8s/deployment.yaml | kubectl apply -f -
+
+             kubectl apply -f k8s/service.yaml
           '''
         }
       }
