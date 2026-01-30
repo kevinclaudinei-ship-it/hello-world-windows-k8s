@@ -14,10 +14,20 @@ spec:
     spec:
       nodeSelector:
         kubernetes.io/os: windows
+
+      affinity:
+        podAntiAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+          - labelSelector:
+              matchLabels:
+                app: hello-world-windows
+            topologyKey: kubernetes.io/hostname
+
       containers:
       - name: hello-world
         image: k8syns/hello-world-windows:{{tag}}
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
+
 
