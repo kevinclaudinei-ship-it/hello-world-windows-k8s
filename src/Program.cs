@@ -1,6 +1,7 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "Hello World from Windows Container on Kubernetes 🚀");
+app.MapGet("/", () => "teste de aplicação k8s em worker windows!!! 🚀");
 
 app.Run();
+
