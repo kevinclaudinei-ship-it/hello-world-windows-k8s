@@ -3,10 +3,10 @@ kind: Service
 metadata:
   name: hello-world-windows
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: hello-world-windows
   ports:
     - port: 80
-      targetPort: 8080
-      nodePort: 30080
+      targetPort: 30080
+  
