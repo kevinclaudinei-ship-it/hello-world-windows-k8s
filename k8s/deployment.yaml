@@ -26,10 +26,10 @@ kind: Service
 metadata:
   name: hello-world-windows
 spec:
-  type: NodePort
+  type: ClusterIP
   selector:
     app: hello-world-windows
   ports:
-    - port: 8080          # porta do Service
-      targetPort: 8080   # porta do container
-      nodePort: 32080    # porta exposta no node
+  - name: http
+    port: 80
+    targetPort: 8080
