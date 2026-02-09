@@ -23,8 +23,8 @@ spec:
           env:
           - name: POD_NAME
             valueFrom:
-             fieldRef:
-              fieldPath: metadata.name
+              fieldRef:
+                fieldPath: metadata.name
         resources:
           requests:
             cpu: "200m"
