@@ -1,6 +1,8 @@
 var builder = WebApplication.CreateBuilder(args);
 var app = builder.Build();
 
-app.MapGet("/", () => "teste k8s windows Pod: <%= maquina %>");
+var podName = Environment.GetEnvironmentVariable("POD_NAME") ?? "pod-desconhecido";
+
+app.MapGet("/", () => $"teste k8s windows Pod: {podName}");
 
 app.Run();
