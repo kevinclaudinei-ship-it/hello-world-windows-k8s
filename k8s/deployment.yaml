@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: hello-world-windows
 spec:
-  replicas: 2
+  replicas: 3
   selector:
     matchLabels:
       app: hello-world-windows
@@ -42,7 +42,7 @@ spec:
     apiVersion: apps/v1
     kind: Deployment
     name: hello-world-windows
-  minReplicas: 2
+  minReplicas: 3
   maxReplicas: 6
   metrics:
   - type: Resource
