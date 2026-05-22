@@ -3,6 +3,6 @@ var app = builder.Build();
 
 var podName = Environment.GetEnvironmentVariable("POD_NAME") ?? "pod-desconhecido";
 
-app.MapGet("/", () => $"teste k8s windows Pod: {podName}");
+app.MapGet("/", () => $"teste kubernetes ia Pod: {podName}");
 
 app.Run();
